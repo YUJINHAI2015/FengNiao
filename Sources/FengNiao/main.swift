@@ -2,6 +2,7 @@
 import Foundation
 import CommandLineKit   // 接受字符输入
 import Rainbow          // 显示高亮
+import FengNiaoKit      // 逻辑处理
 
 let cli = CommandLineKit.CommandLine()
 
@@ -21,7 +22,6 @@ let help = BoolOption(shortFlag: "h", longFlag: "help",
                       helpMessage: "Prints a help message.")
 
 cli.addOptions(projectOption, resourceExtensionOption, fileExtensionsOption,help)
-
 
 cli.formatOutput = { s, type in
     var str: String
