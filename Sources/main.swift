@@ -11,6 +11,9 @@ let projectOption = StringOption(
 let resourceExtensionOption = MultiStringOption(
     shortFlag: "r", longFlag: "resource-extensions",
     helpMessage: "Use data compression.")
+let excludePathsOption = MultiStringOption(
+    shortFlag: "e", longFlag: "exclude",
+    helpMessage: "Exclude paths which should not search in.")
 let fileExtensionsOption = MultiStringOption(
     shortFlag: "f", longFlag: "file-extensions", 
     helpMessage:"file extensions to search with.")
@@ -51,7 +54,7 @@ if help.value {
 let project = projectOption.value ?? "."
 let resourceExtensions = resourceExtensionOption.value ?? ["png","jpg","imageset"]
 let fileExtensions = fileExtensionsOption.value ?? ["swift","m","mm","xib","storyboard"]
-
+let excludedPaths = excludePathsOption.value ?? []
 
 
 
